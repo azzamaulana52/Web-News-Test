@@ -1,8 +1,11 @@
 console.log("hello");
 
-// Fetch news from /api/news
+// Fetch news directly from NewsAPI
 function fetchNews() {
-  fetch("/api/news")
+  const apiKey = "35e9f2c44cc64db6aa812d39c29b5aed"; // ← Ini Key Api
+  const url = `https://newsapi.org/v2/everything?q=technology&apiKey=${apiKey}`;
+
+  fetch(url)
     .then(res => res.json())
     .then(data => {
       console.log(data);
